@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+body{
+    color: #777777;
+    font-size: 14px;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+}
+
+.nav-main ul li a {
+    font-size: 13px;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    display: block;
+    padding: 2px 14px;
+    text-decoration: none;
+}
+
+.nav-main ul li a:hover {
+    color: rgba(255, 255, 255, 0.701961);
+}
+
+.header {
+    padding-top: 22px;
+    padding-right: 3%;
+    padding-left: 3%;
+    width: 94%;
+    background: transparent;
+    position: relative;
+    transition: all 0.3s ease, background-color 0.7s ease;
+}
+
+.header.small {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    border: 0;
+    width: 94%;
+    background: rgba(0, 0, 0, 0.701961);
+}
+
+.nav-main ul li {
+    list-style-type: disc;
+    text-align: -webkit-match-parent;
+    padding-bottom: 10px;
+    position: relative;
+    display: inline;
+    float: left;
+}
+
+#search {
+    border-radius: 50px;
+    margin: 0 0 0 15px;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    background-color: #fff;
+    background-image: url(../images/search.png);
+    background-position: center center;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+}
+
+.nav{
+    margin: 0 auto;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    max-width: 1170px;
+}
+
+.nav.small{
+    padding: 0;
+    border-bottom: 0;
+}
+/* 清除浮动 */
+.nav:after{
+    display:block;
+    content:"";
+    height:0;
+    clear:both;
+    overflow:hidden;
+    visibility:hidden;
+}
+
+.nav-main{
+    margin-top: 8px;
+    float: right;
+}
+.logo{
+    float: left;
+}
+
+.logo img.small{
+    max-height: 40px;
+    width: auto;
+}
+
+.main{
+    overflow: hidden;
+    background-color: #4a4a4a;
+}
+
+.banner-box div{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: none;
+}
+
+.page-main{
+    display: block;
+    height:707px;
+}
+
+.nav-list span{
+    display:block;
+    width:40px;
+    height:0;
+    background:#fff;
+    margin: 0 auto;
+}
