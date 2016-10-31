@@ -23,7 +23,6 @@ function loopBanner(index){
             loopBanner(index+1) }
         );
     }
-
 }
 
 $(document).ready(function(){
@@ -53,7 +52,14 @@ $(function(){
     },function(){
         $('span',this).stop().animate({height:'0'},200);
     });
+    
 });
 $(function(){
-    $('div').attr('#ad_3v').css('display','none')
+    var h = $(window).height();
+   $('.page-main').css('height',h); 
 })
+$(window).resize(function(event) {
+     var h = $(window).height();
+   $('.page-main').css('height',h); 
+});;
+
