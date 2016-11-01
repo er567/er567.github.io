@@ -1,32 +1,56 @@
-function loopBanner(index){
+$(function(){
+    var index = 0;
+    var timer = null;
     var arrImg = $(".banner-box").children("div");
-    if( index >= arrImg.length ) index = 0;
-    var next = index + 1;
-    if( next > arrImg.length-1 ) next = 0;
-    $(arrImg[index]).show();
-    $(arrImg[next]).show();
-    $(arrImg[next]).css('opacity', '0');
+    $('.banner-one').show()
+    timer = setInterval(moveR,3500)
 
-    // 用于修改轮播间隔时间
-    setTimeout(timeOut,3000);
-
-    // 用于调试轮播图动画效果
-    function timeOut(){
-        if(next==2){
-            $(arrImg[next]).animate({opacity:'0.5'}, 2500);
-        }else {
-            $(arrImg[next]).animate({opacity:'0.8'}, 2500);
-        }
-        $(arrImg[index]).animate({opacity:'0'}, 2500, function(){
-            $(arrImg[index]).hide();
-            $(arrImg[next]).hide();
-            loopBanner(index+1) }
-        );
+    $('.banner-box').hover(function(){
+        clearInterval(timer)
+        },function(){
+            timer=setInterval(moveR,3500);
+    })
+    function moveR(){
+        if( index >= arrImg.length ) index = 0;
+        var next = index + 1;
+        if( next > arrImg.length-1 ) next = 0;
+        $(arrImg[index]).show();
+        $(arrImg[next]).show();
+        $(arrImg[next]).css('opacity', '0');
+        // 用于调试轮播图动画效果
+        $(arrImg[next]).animate({opacity:'0.8'}, 800);
+        $(arrImg[index]).animate({opacity:'0'}, 800, function(){});   
+        $('#cs-navigation li').eq(next).addClass('selected').siblings('li').removeClass('selected')   
+        index++;
     }
-}
-
-$(document).ready(function(){
-    loopBanner(0);      // 从第 0 个开始播放
+    function moveL(){
+        
+        if( index < 0 ) index = arrImg.length-1;
+        var next = index - 1;
+        console.log(index,next)
+        if( next < 0 ) next = arrImg.length-1;
+        $(arrImg[index]).show();
+        $(arrImg[next]).show();
+        $(arrImg[next]).css('opacity', '0');
+        // 用于调试轮播图动画效果
+        $(arrImg[next]).animate({opacity:'0.8'}, 800);
+        $(arrImg[index]).animate({opacity:'0'}, 800, function(){});
+        $('#cs-navigation li').eq(next).addClass('selected').siblings('li').removeClass('selected')
+        index = next;
+    }
+    $('#cs-navigation li').click(function(){
+        index = $(this).index();
+        $(arrImg).eq(index).show().siblings('div').hide();
+        $(arrImg).eq(index).css({opacity:'0.8'}, 800).siblings('div').css({opacity:0}, 800);
+        $('#cs-navigation li').eq(index).addClass('selected').siblings('li').removeClass('selected')
+    });
+    $('#left').click(function(){
+        moveL();
+    });
+    $('#right').click(function(){
+        // $(arrImg).stop();
+        moveR();
+    });
 });
 
 // nav过渡控制
