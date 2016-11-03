@@ -11,6 +11,7 @@ $(function(){
             timer=setInterval(moveR,3500);
     })
     function moveR(){
+        console.log(index)
         if( index >= arrImg.length ) index = 0;
         var next = index + 1;
         if( next > arrImg.length-1 ) next = 0;
@@ -80,10 +81,19 @@ $(function(){
 });
 $(function(){
     var h = $(window).height();
-   $('.page-main').css('height',h); 
+   $('.page-main').css('height',h);
+   /* Set swiper */
+   var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 3,
+        paginationClickable: true,
+        spaceBetween: 30
+   });
 })
 $(window).resize(function(event) {
      var h = $(window).height();
    $('.page-main').css('height',h); 
-});;
+});
 
