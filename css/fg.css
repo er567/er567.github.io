@@ -450,7 +450,6 @@ h4{padding:10px 0;}
 }
 .pc-wrapper {
     position: relative;
-    float: left;
     clear: both;
 /*     overflow: hidden; */
     width: 100%;
@@ -458,16 +457,16 @@ h4{padding:10px 0;}
 }
 .swiper-container {
     height: 300px;
-    overflow:visible !important;
+    
 } 
 .swiper-slide{
     text-align:center;
 }
 .swiper-button-prev{
-    margin-left:-40px;
+   
 }
 .swiper-button-next{
-    margin-right:-40px;
+    
 }
 .swiper-slide a{
     position: relative;
@@ -578,6 +577,9 @@ h4{padding:10px 0;}
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 10px;
+}
+.portfolio-carousel{
+  position:relative;
 }
 
 

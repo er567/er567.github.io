@@ -89,11 +89,13 @@ $(function(){
         prevButton: '.swiper-button-prev',
         slidesPerView: 3,
         paginationClickable: true,
-        spaceBetween: 30
+        spaceBetween: 0
    });
+
 })
 $(window).resize(function(event) {
-     var h = $(window).height();
+     var h = $(window).height();  
+     var w = $(window).width();
    $('.page-main').css('height',h); 
 });
 
