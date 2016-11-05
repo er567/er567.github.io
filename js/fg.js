@@ -89,7 +89,7 @@ $(function(){
         prevButton: '.swiper-button-prev',
         slidesPerView: 3,
         paginationClickable: true,
-        spaceBetween: 0
+        spaceBetween: 10
    });
 
 })
