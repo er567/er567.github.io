@@ -159,6 +159,9 @@ body{
     height: 15px;
     cursor: pointer;
 }
+.underLine.no-paddingLeft{
+    padding-left:0px;
+  }
 ul#cs-navigation li span {
     opacity: 0.3;
     border-radius: 20px;
@@ -218,14 +221,14 @@ ul#cs-navigation li span {
     font-family:'楷体';
 }
 h1{
-    font-size:3.5rem;
+    font-size:3rem;
     line-height:2rem;
     font-weight:normal;
     padding:10px 0;
     margin-bottom:10px;
 }
 .content-slider p{
-    font-size:18px;
+    font-size:1.2rem;
 }
 .btn{
     border-radius: 50px;
@@ -707,5 +710,10 @@ h4{padding:10px 0;}
     }
     #full-width .content-wrap{
     margin:30px auto;
+  }
 }
+@media (max-width: 320px) {
+  .nav-main ul li a{
+    font-size: 12px;
+  }
 }
