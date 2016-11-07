@@ -11,7 +11,6 @@ $(function(){
             timer=setInterval(moveR,3500);
     })
     function moveR(){
-        console.log(index)
         if( index >= arrImg.length ) index = 0;
         var next = index + 1;
         if( next > arrImg.length-1 ) next = 0;
@@ -83,19 +82,47 @@ $(function(){
     var h = $(window).height();
    $('.page-main').css('height',h);
    /* Set swiper */
-   var swiper = new Swiper('.swiper-container', {
+   var w = $(window).width();
+   if(w>767){
+    var swiper = new Swiper('.swiper-container', {
         pagination: '.swiper-pagination',
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
         slidesPerView: 3,
         paginationClickable: true,
         spaceBetween: 10
-   });
-
+        });
+    }
+    else{
+        var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 10
+        }); 
+    }
+    /* to-Top */
+    $('.scroll-to-top').click(function(){
+        $('body,html').animate({scrollTop:0},1000);
+    });
 })
+    /* 窗口改变事件 */
 $(window).resize(function(event) {
      var h = $(window).height();  
      var w = $(window).width();
-   $('.page-main').css('height',h); 
+   $('.page-main').css('height',h);
+
 });
+    /* to-Top */
+window.onscroll = function () {  
+    var top = document.documentElement.scrollTop || document.body.scrollTop;  
+    if(top>100){
+        $('.scroll-to-top').show()
+    }else{
+       $('.scroll-to-top').hide() 
+    }
+}
+
 
