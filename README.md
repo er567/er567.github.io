@@ -1,3 +1,3 @@
 # 个人主页
-er567.cn</br>
+在线预览 https://oohyo.github.io/</br>
 不定期更新~
