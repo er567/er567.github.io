@@ -51,6 +51,20 @@ $(function(){
         // $(arrImg).stop();
         moveR();
     });
+    //搜索框
+    $('#search').click(function(){
+        var _this = $(this);
+        if(_this.hasClass('search-close')){
+            _this.removeClass('search-close');
+            $('.search-wrap').animate({opacity:0,width:'0px'})
+        }else{
+            _this.addClass('search-close');
+            $('.search-wrap').animate({opacity:1,width:'200px'})
+        }
+        
+        
+
+    })
 });
 
 // nav过渡控制
