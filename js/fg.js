@@ -19,7 +19,7 @@ $(function(){
         $(arrImg[next]).css('opacity', '0');
         // 用于调试轮播图动画效果
         $(arrImg[next]).animate({opacity:'0.8'}, 800);
-        $(arrImg[index]).animate({opacity:'0'}, 800, function(){});   
+        $(arrImg[index]).animate({opacity:'0'}, 800, function(){$(this).hide();});   
         $('#cs-navigation li').eq(next).addClass('selected').siblings('li').removeClass('selected')   
         index++;
     }
@@ -34,7 +34,7 @@ $(function(){
         $(arrImg[next]).css('opacity', '0');
         // 用于调试轮播图动画效果
         $(arrImg[next]).animate({opacity:'0.8'}, 800);
-        $(arrImg[index]).animate({opacity:'0'}, 800, function(){});
+        $(arrImg[index]).animate({opacity:'0'}, 800, function(){$(this).hide();});
         $('#cs-navigation li').eq(next).addClass('selected').siblings('li').removeClass('selected')
         index = next;
     }
